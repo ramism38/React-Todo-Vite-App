@@ -1,11 +1,5 @@
+import type { Task } from '../types/Task';
 
-
-//Tipo de tarea (Declaramos como sera el objeto)
-type Task = {
-    id: number,
-    text: string,
-    completed: boolean;
-}
 //Declaracion de props
 type TodoItemProps = {
     task: Task;
