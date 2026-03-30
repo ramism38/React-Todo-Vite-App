@@ -23,8 +23,8 @@ function TodoForm({ onAddTask }: TodoFormProps) {
     return (
         <div>
             <h2>Formulario de nueva tarea</h2>
-            <input type="text" name="text" onChange={updateNewTaskText} value={newTaskText} />
-            <button type="button" onClick={handleAddTask}>Añadir tarea</button>
+            <input type="text" name="text" onChange={updateNewTaskText} value={newTaskText} placeholder='Añadir nueva tarea'/>
+            <button type="button" onClick={handleAddTask} disabled={newTaskText.trim() === ""}>Añadir tarea</button>
         </div>
     );
 

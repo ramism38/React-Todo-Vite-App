@@ -1,0 +1,7 @@
+.todo-item__text {
+    font-size: 18px;
+}
+
+.todo-item__text--completed {
+  text-decoration: line-through;
+}

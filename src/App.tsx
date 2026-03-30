@@ -19,6 +19,20 @@ const [tasks, setTasks] = useState<Task[]>(() => {
   ];
 });
 
+const [filter, setFilter] = useState<"all" | "completed" | "pending">("all");
+let filteredTasks: Task[] = [];
+
+switch (filter) {
+  case "completed":
+    filteredTasks = tasks.filter(task => task.completed);
+    break;
+  case "pending":
+    filteredTasks = tasks.filter(task => !task.completed);
+    break;
+  default:
+    filteredTasks = tasks;
+}
+
   //Guardar tareas en localStorage cada vez que se actualizan
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -55,11 +69,20 @@ const [tasks, setTasks] = useState<Task[]>(() => {
   return (
     <div>
       <h1>Mi TODO App</h1>
-      <TodoList
-        tasks={tasks}
-        onDelete={deleteTask}
-        onToggleCompleted={toggleTask}
-      />
+      <div className='filter-buttons'>
+        <button className={`filter-button ${filter === "all" ? "filter-button--active" : ""}`} onClick={() => setFilter("all")}>Todas</button>
+        <button className={`filter-button ${filter === "completed" ? "filter-button--active" : ""}`} onClick={() => setFilter("completed")}>Completadas</button>
+        <button className={`filter-button ${filter === "pending" ? "filter-button--active" : ""}`} onClick={() => setFilter("pending")}>Pendientes</button>
+      </div>
+      {filteredTasks.length === 0 ? (
+        <p>No hay tareas para mostrar</p>
+      ) : (
+        <TodoList 
+          tasks={filteredTasks}
+          onDelete={deleteTask}
+          onToggleCompleted={toggleTask}
+        />
+      )}
       <br />
       <TodoForm
         onAddTask={createTask}

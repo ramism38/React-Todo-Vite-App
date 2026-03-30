@@ -1,4 +1,5 @@
 import type { Task } from '../types/Task';
+import './TodoItem.css';
 
 //Declaracion de props
 type TodoItemProps = {
@@ -11,7 +12,7 @@ function TodoItem(props: TodoItemProps) {
     const { task, onDelete, onToggleCompleted } = props;
     return (
 
-        <li> Tarea nº {task.id} con nombre: {task.text} en estado: {task.completed ? "Completada" : "Pendiente"}
+        <li> <span className={`todo-item__text ${task.completed ? "todo-item__text--completed" : ""}`}>{task.text} </span>
             <button onClick={() => onDelete(task.id)}>Eliminar</button>
             <button onClick={() => onToggleCompleted(task.id)}> {task.completed ? "Marcar como pendiente" : "Marcar como completada"}</button>
         </li>
