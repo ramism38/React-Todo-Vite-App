@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación de gestión de tareas (TODO App) desarrollada con React, TypeScript y Vite.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este proyecto consiste en una aplicación sencilla para crear y gestionar tareas. Permite añadir nuevas tareas, marcarlas como completadas, eliminarlas y filtrarlas según su estado.
 
-## React Compiler
+El objetivo principal del proyecto ha sido practicar y afianzar conceptos fundamentales de React como el manejo del estado, la comunicación entre componentes y el uso de hooks.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Además, se ha implementado persistencia de datos mediante localStorage para mantener las tareas incluso al recargar la página.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Añadir nuevas tareas
+- Eliminar tareas
+- Marcar tareas como completadas o pendientes
+- Filtrar tareas:
+  - Todas
+  - Completadas
+  - Pendientes
+- Persistencia de datos con localStorage
+- Mensajes dinámicos cuando no hay tareas
+- Interfaz básica mejorada con CSS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tecnologías utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React
+- TypeScript
+- Vite
+- CSS
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Instalación y uso
+
+1. Clonar el repositorio:
+
+git clone https://github.com/ramism38/React-Todo-Vite-App.git
+
+2. Acceder a la carpeta del proyecto:
+
+cd React-Todo-Vite-App
+
+3. Instalar dependencias:
+
+npm install
+
+4. Ejecutar el proyecto:
+
+npm run dev
+
+## Aprendizajes
+
+Durante el desarrollo de este proyecto he trabajado principalmente en:
+
+- Uso de useState para gestionar estado
+- Uso de useEffect para persistencia en localStorage
+- Creación de componentes reutilizables
+- Comunicación entre componentes mediante props y callbacks
+- Renderizado de listas con map
+- Filtrado de datos con filter
+- Renderizado condicional en React
+- Organización del código y separación de responsabilidades
+
+## Posibles mejoras
+
+- Añadir edición de tareas
+- Añadir fechas o prioridades
+- Mejorar el diseño visual (UI/UX)
+- Conectar con un backend
+- Añadir tests
