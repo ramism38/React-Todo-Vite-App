@@ -2,7 +2,8 @@
 
 Aplicación de gestión de tareas (TODO App) desarrollada con React, TypeScript y Vite.
 
-Visitar en: https://react-todo-vite-appdeploy.vercel.app/
+Visitar en: Visitar en: https://react-todo-vite-app-gilt.vercel.app/
+
 
 
 ## Descripción
